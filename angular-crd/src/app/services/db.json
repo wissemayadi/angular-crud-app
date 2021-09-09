@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "wissam",
+      "lastName": "santos2",
+      "email": "wessou1@yahoo.fr"
+    },
+    {
+      "id": 2,
+      "firstName": "wissem",
+      "lastName": "ayadi",
+      "email": "wessou@yahoo.fr"
+    },
+    {
+      "id": 3,
+      "firstName": "wiss",
+      "lastName": "louis",
+      "email": "wes@yahoo.fr"
+    },
+    {
+      "id": 4,
+      "firstName": "louis",
+      "lastName": "wissal",
+      "email": "wissal@yahoo.fr"
+    },
+    {
+      "id": 5,
+      "firstName": "wissou2",
+      "lastName": "santos",
+      "email": "wessou1@yahoo.fr"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

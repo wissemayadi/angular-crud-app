@@ -1,0 +1,71 @@
+<nav class="navbar navbar-light bg-secondary">
+<div class="container-fluid">
+<h1>Person crud</h1>
+<div class="d-flex">
+<button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+
+    ajouter personne
+</button>
+</div>
+</div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+    <tr>
+<th scope="col">Id</th>
+<th scope="col">First name</th>
+<th scope="col">Last name</th>
+<th scope="col">email</th>
+<th scope="col">Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let row of personData">
+    <td>{{row.id}}</td>
+    <td>{{row.firstName}}</td>
+    <td>{{row.lastName}}</td>
+    <td>{{row.email}}</td>
+    <td ><button (click)="editPerson(row)"class="btn btn-info"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">edit</button>
+      <button (click)="deletePerson(row)" class="btn btn-danger mx-3" >delete</button></td>
+</tr>
+</tbody>
+</table>
+
+<!-- modal will be displayed when we want to add a new person  -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Person details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">First name</label>
+                  <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Last name</label>
+                  <input type="text" formControlName="lastName"class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="email"id="exampleInputPassword1">
+                  </div>
+                
+              </form>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" id="cancel"class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="postPersonInfo()">confirm</button>
+          <button type="button" class="btn btn-primary" (click)="editPersonModal()">update</button>
+        </div>
+      </div>
+    </div>
+  </div>
